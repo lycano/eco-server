@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM mono:5.12.0.226
 
 ### Install Dependencies (Mono, unzip, ...)
 ### TODO: Move to base image
@@ -7,7 +7,7 @@ RUN /install_deps.sh
 
 ### Basic settings for Eco Server
 WORKDIR /srv/eco-server
-EXPOSE 2999/udp 2999 3000 3001
+EXPOSE 3000 3001
 
 CMD ["/srv/eco-server/start.sh"]
 
