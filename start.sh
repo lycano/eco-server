@@ -15,4 +15,4 @@ fi
 
 echo "$ECO_VESRION" > Configs/eco_version
 
-mono EcoServer.exe -nogui
+mono --gc=sgen EcoServer.exe -nogui
