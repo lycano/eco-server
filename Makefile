@@ -4,10 +4,10 @@ cnf ?= config.env
 include $(cnf)
 export $(shell sed 's/=.*//' $(cnf))
 
-ECO_VERSION ?= 0.7.4.6
+ECO_VERSION ?= 0.7.4.6-beta
 DOCKER_HOME ?= ~
 SERVER_NAME ?= eco-server
-DOCKER_IMAGE ?= t3hk0d3/eco-server
+DOCKER_IMAGE ?= lycano/eco-server
 
 DOCKER_TARGET = ${DOCKER_IMAGE}:${ECO_VERSION}
 
