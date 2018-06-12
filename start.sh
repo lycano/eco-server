@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if [ ! -f Configs/WorldGenerator.eco ]; then
   echo "Copying default configs"
   mkdir -p Configs
@@ -15,4 +14,4 @@ fi
 
 echo "$ECO_VESRION" > Configs/eco_version
 
-MONO_GC_PARAMS="major=marksweep-fixed,major-heap-size=2g" mono --gc=sgen EcoServer.exe -nogui
+MONO_GC_PARAMS=mode=throughput mono --gc=sgen EcoServer.exe -nogui
