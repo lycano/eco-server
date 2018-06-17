@@ -29,6 +29,7 @@ unzip -q $ECO_LOCAL_FILE -d $ECO_INSTALL_DIR
 
 # Move defaults so they could be copied on start, not overwritten by mounted volumes
 mv Configs DefaultConfigs
+[ -d Storage ] || mkdir Storage
 mv Storage DefaultStorage
 mv Mods DefaultMods
 
