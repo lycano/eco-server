@@ -28,8 +28,9 @@ clean:
 	rm -rf "${ECO_FILENAME}"
 
 run:
-	mkdir -p "${DOCKER_HOME}/${SERVER_NAME}/Storage" "${DOCKER_HOME}/${SERVER_NAME}/Configs" && \
+	mkdir -p "${DOCKER_HOME}/${SERVER_NAME}/Storage" "${DOCKER_HOME}/${SERVER_NAME}/Configs" "${DOCKER_HOME}/${SERVER_NAME}/Mods" && \
 	docker run -d --name "${SERVER_NAME}" \
 	-v ${DOCKER_HOME}/${SERVER_NAME}/Storage:/srv/eco-server/Storage \
 	-v ${DOCKER_HOME}/${SERVER_NAME}/Configs:/srv/eco-server/Configs \
+	-v ${DOCKER_HOME}/${SERVER_NAME}/Mods:/srv/eco-server/Mods \
 	${DOCKER_TARGET}

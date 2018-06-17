@@ -12,6 +12,12 @@ if [ ! -f Storage/DefaultWorld ]; then
   cp DefaultStorage/* Storage/
 fi
 
+if [ ! -d Mods/. ]; then
+  echo "Copying default mods"
+  mkdir -p Mods
+  cp DefaultMods/* Mods/
+fi
+
 echo "$ECO_VESRION" > Configs/eco_version
 
 MONO_GC_PARAMS=mode=throughput mono --gc=sgen EcoServer.exe -nogui
