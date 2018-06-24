@@ -12,7 +12,7 @@ if [ ! -f Storage/DefaultWorld ]; then
   cp -varf DefaultStorage/* Storage/
 fi
 
-if [ ! -d Mods/. ]; then
+if [ -z "$(ls -A Mods/)" ]; then
   echo "Copying default mods"
   mkdir -p Mods
   cp -varf DefaultMods/* Mods/
