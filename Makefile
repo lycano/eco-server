@@ -29,7 +29,9 @@ clean:
 
 run:
 	mkdir -p "${DOCKER_HOME}/${SERVER_NAME}/Storage" "${DOCKER_HOME}/${SERVER_NAME}/Configs" "${DOCKER_HOME}/${SERVER_NAME}/Mods" && \
-	docker run -d --name "${SERVER_NAME}" \
+	docker run -it -d --name "${SERVER_NAME}" \
+	-p=127.0.0.1:3000:3000/udp \
+	-p=127.0.0.1:3001:3000 \
 	-v ${DOCKER_HOME}/${SERVER_NAME}/Storage:/srv/eco-server/Storage \
 	-v ${DOCKER_HOME}/${SERVER_NAME}/Configs:/srv/eco-server/Configs \
 	-v ${DOCKER_HOME}/${SERVER_NAME}/Mods:/srv/eco-server/Mods \
